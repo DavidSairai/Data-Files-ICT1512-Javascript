@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      JavaScript 6th Edition
+      Chapter 2
+      Hands-on Project 2-2
+
+      Author: David Sairai
+      Date:   16 April 2021
+
+      Filename: index.htm
+   -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Hands-on Project 2-2</title>
+   <link rel="stylesheet" href="styles.css" />
+   <script src="modernizr.custom.05819.js"></script>
+</head>
+
+<body>
+   <header>
+      <h1>
+         David Sairai Chapter Two - Hands-on Project 2-2
+      </h1>
+   </header>
+
+   <article>
+      <h2>Contact Information</h2>
+      <form>
+        <fieldset id="contactinfo">
+          <label for="nameinput">
+            Name
+            <input type="text" id="nameinput" name="name" />
+          </label>
+          <label for="emailinput">
+            Email
+            <input type="text" id="emailinput" name="email" />
+          </label>
+          <label for="phoneinput">
+            Phone
+            <input type="text" id="phoneinput" name="phone" />
+          </label>
+        </fieldset>
+        <fieldset id="submitbutton">
+          <input type="button" id="submit" value="Submit" />
+        </fieldset>
+     </form>
+   </article>
+   <script>
+     function convert(){
+       var degF = document.getElementById("fValue").value;
+       var degC = degF -32 * 5 / 9;
+       document.getElementById("cValue").innerHTML = degC;
+     }
+   </script>
+</body>
+</html>
