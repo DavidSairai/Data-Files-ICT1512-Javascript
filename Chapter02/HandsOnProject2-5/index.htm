@@ -4,16 +4,16 @@
    <!--
       JavaScript 6th Edition
       Chapter 2
-      Hands-on Project 2-4
+      Hands-on Project 2-5
 
       Author: David Sairai
-      Date:   16 April 2021 
+      Date:   16 April 2021
 
       Filename: index.htm
    -->
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-   <title>Hands-on Project 2-4</title>
+   <title>Hands-on Project 2-5</title>
    <link rel="stylesheet" href="styles.css" />
    <script src="modernizr.custom.05819.js"></script>
 </head>
@@ -21,7 +21,7 @@
 <body>
    <header>
       <h1>
-         Hands-on Project 2-4
+         Hands-on Project 2-5
       </h1>
    </header>
 
@@ -56,10 +56,11 @@
          (item4.checked) ? (itemTotal += 13) : (itemTotal += 0); 
          (item5.checked) ? (itemTotal += 6) : (itemTotal += 0); 
          var salesTaxRate = 0.07; /*calculates sales tax*/
-         var orderTotal = itemTotal + (itemTotal * salesTaxRate); /* calculates total of order*/
+         itemTotal *= 100;
+         var orderTotal = (itemTotal + (itemTotal * salesTaxRate))/100; /* calculates total of order*/
          alert("Your order total is $" + orderTotal); /*alerts on Order total*/
       }
       document.getElementById("submit").addEventListener("click", calcTotal, false);
    </script>
-</body>
+   </body>
 </html>

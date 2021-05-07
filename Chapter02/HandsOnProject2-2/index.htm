@@ -21,12 +21,13 @@
 <body>
    <header>
       <h1>
-         David Sairai Chapter Two - Hands-on Project 2-2
+         Hands-on Project 2-2
       </h1>
    </header>
 
    <article>
       <h2>Contact Information</h2>
+      <!-- Form to be filled in with details-->
       <form>
         <fieldset id="contactinfo">
           <label for="nameinput">
@@ -48,11 +49,13 @@
      </form>
    </article>
    <script>
-     function convert(){
-       var degF = document.getElementById("fValue").value;
-       var degC = degF -32 * 5 / 9;
-       document.getElementById("cValue").innerHTML = degC;
-     }
-   </script>
+    function submitInfo(){
+      var name = document.getElementById("nameinput"); /* Enter name field*/
+      var email = document.getElementById("emailinput"); /* Enter email address field*/
+      var phone = document.getElementById("phoneinput"); /* Enter phone number  field*/
+      (name.value && email.value && phone.value) ? alert("Thank You!") : alert("Please fill in all the fields");
+   }
+   document.getElementById("submit").addEventListener("click", submitInfo, false);
+ </script>
 </body>
 </html>

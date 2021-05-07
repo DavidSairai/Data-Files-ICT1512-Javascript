@@ -1,19 +1,20 @@
+
 <!DOCTYPE html>
 <html>
 <head>
    <!--
       JavaScript 6th Edition
       Chapter 2
-      Hands-on Project 2-4
+      Hands-on Project 2-5
 
-      Author: David Sairai
-      Date:   16 April 2021 
+      Author: Andrea Davis
+      Date:   08/28/2017
 
       Filename: index.htm
    -->
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-   <title>Hands-on Project 2-4</title>
+   <title>Hands-on Project 2-5</title>
    <link rel="stylesheet" href="styles.css" />
    <script src="modernizr.custom.05819.js"></script>
 </head>
@@ -21,7 +22,7 @@
 <body>
    <header>
       <h1>
-         Hands-on Project 2-4
+         Hands-on Project 2-5
       </h1>
    </header>
 
@@ -42,7 +43,6 @@
       </form>
    </article>
    <script>
-      /* function for menu items items*/
       function calcTotal() { 
          var itemTotal = 0; 
          var item1 = document.getElementById("item1");
@@ -55,9 +55,9 @@
          (item3.checked) ? (itemTotal += 8) : (itemTotal += 0); 
          (item4.checked) ? (itemTotal += 13) : (itemTotal += 0); 
          (item5.checked) ? (itemTotal += 6) : (itemTotal += 0); 
-         var salesTaxRate = 0.07; /*calculates sales tax*/
-         var orderTotal = itemTotal + (itemTotal * salesTaxRate); /* calculates total of order*/
-         alert("Your order total is $" + orderTotal); /*alerts on Order total*/
+         var salesTaxRate = 0.07;
+         var orderTotal = itemTotal + (itemTotal * salesTaxRate);
+         alert("Your order total is $" + orderTotal); 
       }
       document.getElementById("submit").addEventListener("click", calcTotal, false);
    </script>

@@ -6,8 +6,8 @@
       Chapter 3
       Hands-on Project 3-3
 
-      Author: 
-      Date:   
+      Author: David Sairai
+      Date: 21 April 2021   
 
       Filename: index.htm
    -->
@@ -37,5 +37,21 @@
           </ul>
       </div>
    </article>
+   <script>
+      //array of places
+      var places = ["Harare", "Bulawayo", "Mutare", "Gweru", "Kariba"];
+      //function processPlaces
+      function processPlaces(){
+      for (var i = 0; i < 5; i++){
+         var listItem = "item" + (i + 1);
+         document.getElementById(listItem).innerHTML = places[i];
+            }
+      }
+      if (window.addEventListener){
+         window.addEventListener("load", processPlaces, false);
+      } else if (window.attachEvent){
+         window.attachEvent("onload", processPlaces);
+      }
+   </script>
 </body>
 </html>

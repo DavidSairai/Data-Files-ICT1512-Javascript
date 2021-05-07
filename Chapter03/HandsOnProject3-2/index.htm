@@ -6,8 +6,8 @@
       Chapter 3
       Hands-on Project 3-2
 
-      Author: 
-      Date:   
+      Author: David Sairai
+      Date: 21 April 2021 
 
       Filename: index.htm
    -->
@@ -47,5 +47,19 @@
         </fieldset>
      </form>
    </article>
+   <script>
+     function insertPlaceholders(){
+       if (!Modernizr.input.placeholder){
+         document.getElementById("nameinput").value = "First and Last Name";
+         document.getElementById("emailinput").value = "address@example.com";
+         document.getElementById("phoneinput").value = "###-###-####";
+       }
+     }
+     if (window.addEventListener){
+       window.addEventListener("load", insertPlaceholders, false);
+      } else if (window.attachEvent){
+        window.attachEvent("onload", insertPlaceholders, false);
+      }
+   </script>
 </body>
 </html>
