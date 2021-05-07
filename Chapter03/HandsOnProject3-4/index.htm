@@ -6,8 +6,8 @@
       Chapter 3
       Hands-on Project 3-4
 
-      Author: 
-      Date:   
+      Author: David Sairai
+      Date: 21 April 2021  
 
       Filename: index.htm
    -->
@@ -48,5 +48,28 @@
           </fieldset>
       </form>
    </article>
+   <script>
+      var i = 1;
+      var listItem = "";
+      //function processInput() to handle input
+      function processInput(){
+         if (i <= 5) {
+            listItem = "item" + i;
+            document.getElementById(listItem).innerHTML = document.getElementById("toolBox").value;
+            document.getElementById("toolBox").value = "";
+            if (i === 5){
+               document.getElementById("resultsExpl").innerHTML = "Thanks for you suggestions.";
+            }
+            i++;
+         }
+      }
+      //Event Listener for backward compatibility
+      var btn = document.getElementById("button");
+      if (btn.addEventListener){
+         btn.addEventListener("click", processInput, false);
+      } else if (btn.attachEvent){
+         btn.attachEvent("onclick", processInput);
+      }
+   </script>
 </body>
 </html>
