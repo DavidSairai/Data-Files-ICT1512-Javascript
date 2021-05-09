@@ -1,0 +1,455 @@
+<!--
+   *  Hands-on done by by David Sairai - Student 34919120 
+   *  Assignment 2 Unique number – 694762
+   •	Hands-On Project 1-3 page 68
+   •	Project 2-4 page 143
+   •	Project 3-3 page 208
+   •	Project 4-3 page 286
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="David Sairai's Blog">
+<title>David's JavaScript Hands-on Projects - 694762</title>
+<!-- Stylesheet to format my blog-->
+<style>
+    h1 { /* formats my chapter headlines */
+        color:blue; 
+        font-family:verdana;
+        text-align: center;
+        }
+    h2{
+        color:blue; /* formats my project  headlines */
+        font-family:verdana;
+        text-align: center;
+        }
+    body {
+        font-family:sans-serif;/* formats the body  */
+        font-size: 20px;
+        background-color: skyblue;
+        }
+    pre code {
+        background-color:beige; /* formats my project code */
+        font-size: 15px;
+  }
+  #comments{
+        font-family: arial; font-style: italic; font-size: 15px;} /* formats my comments */
+.copyright 
+        {
+        font-size: 14px; /* formats my copyright */
+         }
+    </style>
+<meta http-equiv="Content-Type" content="text/html;
+charset=UTF-8">
+</head>
+<body>
+    <h1>ASSIGNMENT UNIQUE NUMBER – 694762</h1>
+<!-- About JavaScript section -->
+<h2>Hands-On Project 1-3 page 68</h2>
+
+<pre>
+    <code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang='en'&gt;
+&lt;head&gt;
+   &lt;!--
+      JavaScript 6th Edition
+      Chapter 1
+      Hands-on Project 1-3
+
+      Author: David Sairai
+      Date:   21 March 2021
+
+      Filename: index.htm
+   --&gt;
+   &lt;meta charset="utf-8" /&gt;
+   &lt;meta name="viewport" content="width=device-width,initial-scale=1.0"&gt;
+   &lt;title&gt;Hands-on Project 1-3&lt;/title&gt;
+   &lt;link rel="stylesheet" href="styles.css" /&gt;
+   &lt;script src="mordernizer.custom.05819.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+   &lt;header&gt;
+      &lt;h1&gt;
+         Hands-on Project 1-3
+      &lt;/h1&gt;
+   &lt;/header&gt;
+
+   &lt;article&gt;
+
+    <!-- order form to enter contact information-->
+      &lt;h2&gt;Order Form&lt;/h2&gt;
+      &lt;form&gt;
+        &lt;fieldset id="contactinfo"&gt;
+          &lt;legend&gt;&lt;span&gt;Contact Information&lt;/span&gt;&lt;/legend&gt;
+          &lt;label for="nameinput"&gt;
+            Name
+            &lt;input type="text" id="nameinput" name="name" /&gt;
+          &lt;/label&gt;
+          &lt;label for="emailinput"&gt;
+            Email
+            &lt;input type="email" id="emailinput" name="email" /&gt;
+          &lt;/label&gt;
+          &lt;label for="phoneinput"&gt;
+            Phone
+            &lt;input type="text" id="phoneinput" name="phone" /&gt;
+          &lt;/label&gt;
+        &lt;/fieldset&gt;
+
+        <!--reservation information-->
+        &lt;fieldset id="reserveinfo"&gt;
+          &lt;legend&gt;&lt;span&gt;Reservation Information&lt;/span&gt;&lt;/legend&gt;
+          &lt;fieldset id="checkin"&gt;
+            &lt;legend&gt;Pickup date&lt;/legend&gt;
+            &lt;select id="inmonth" name="inmonth"&gt;
+              &lt;option value="01"&gt;January&lt;/option&gt;
+              &lt;option value="02"&gt;February&lt;/option&gt;
+              &lt;option value="03"&gt;March&lt;/option&gt;
+              &lt;option value="04"&gt;April&lt;/option&gt;
+              &lt;option value="05"&gt;May&lt;/option&gt;
+              &lt;option value="06"&gt;June&lt;/option&gt;
+              &lt;option value="07"&gt;July&lt;/option&gt;
+              &lt;option value="08"&gt;August&lt;/option&gt;
+              &lt;option value="09"&gt;September&lt;/option&gt;
+              &lt;option value="10"&gt;October&lt;/option&gt;
+              &lt;option value="11"&gt;November&lt;/option&gt;
+              &lt;option value="12"&gt;December&lt;/option&gt;
+            &lt;/select&gt;
+            &lt;select id="indate" name="indate"&gt;
+              &lt;option value="01"&gt;1&lt;/option&gt;
+              &lt;option value="02"&gt;2&lt;/option&gt;
+              &lt;option value="03"&gt;3&lt;/option&gt;
+              &lt;option value="04"&gt;4&lt;/option&gt;
+              &lt;option value="05"&gt;5&lt;/option&gt;
+              &lt;option value="06"&gt;6&lt;/option&gt;
+              &lt;option value="07"&gt;7&lt;/option&gt;
+              &lt;option value="08"&gt;8&lt;/option&gt;
+              &lt;option value="09"&gt;9&lt;/option&gt;
+              &lt;option value="10"&gt;10&lt;/option&gt;
+              &lt;option value="11"&gt;11&lt;/option&gt;
+              &lt;option value="12"&gt;12&lt;/option&gt;
+              &lt;option value="13"&gt;13&lt;/option&gt;
+              &lt;option value="14"&gt;14&lt;/option&gt;
+              &lt;option value="15"&gt;15&lt;/option&gt;
+              &lt;option value="16"&gt;16&lt;/option&gt;
+              &lt;option value="17"&gt;17&lt;/option&gt;
+              &lt;option value="18"&gt;18&lt;/option&gt;
+              &lt;option value="19"&gt;19&lt;/option&gt;
+              &lt;option value="20"&gt;20&lt;/option&gt;
+              &lt;option value="21"&gt;21&lt;/option&gt;
+              &lt;option value="22"&gt;22&lt;/option&gt;
+              &lt;option value="23"&gt;23&lt;/option&gt;
+              &lt;option value="24"&gt;24&lt;/option&gt;
+              &lt;option value="25"&gt;25&lt;/option&gt;
+              &lt;option value="26"&gt;26&lt;/option&gt;
+              &lt;option value="27"&gt;27&lt;/option&gt;
+              &lt;option value="28"&gt;28&lt;/option&gt;
+              &lt;option value="29"&gt;29&lt;/option&gt;
+              &lt;option value="30"&gt;30&lt;/option&gt;
+              &lt;option value="31"&gt;31&lt;/option&gt;
+            &lt;/select&gt;
+            &lt;select id="inyear" name="inyear"&gt;
+              &lt;option value="2013"&gt;2017&lt;/option&gt;
+              &lt;option value="2014"&gt;2018&lt;/option&gt;
+              &lt;option value="2015"&gt;2019&lt;/option&gt;
+            &lt;/select&gt;
+          &lt;/fieldset&gt;
+          &lt;fieldset id="checkout"&gt;
+            &lt;legend&gt;Dropoff date&lt;/legend&gt;
+            &lt;select id="outmonth" name="outmonth"&gt;
+              &lt;option value="01"&gt;January&lt;/option&gt;
+              &lt;option value="02"&gt;February&lt;/option&gt;
+              &lt;option value="03"&gt;March&lt;/option&gt;
+              &lt;option value="04"&gt;April&lt;/option&gt;
+              &lt;option value="05"&gt;May&lt;/option&gt;
+              &lt;option value="06"&gt;June&lt;/option&gt;
+              &lt;option value="07"&gt;July&lt;/option&gt;
+              &lt;option value="08"&gt;August&lt;/option&gt;
+              &lt;option value="09"&gt;September&lt;/option&gt;
+              &lt;option value="10"&gt;October&lt;/option&gt;
+              &lt;option value="11"&gt;November&lt;/option&gt;
+              &lt;option value="12"&gt;December&lt;/option&gt;
+            &lt;/select&gt;
+            &lt;select id="outdate" name="outdate"&gt;
+              &lt;option value="01"&gt;1&lt;/option&gt;
+              &lt;option value="02"&gt;2&lt;/option&gt;
+              &lt;option value="03"&gt;3&lt;/option&gt;
+              &lt;option value="04"&gt;4&lt;/option&gt;
+              &lt;option value="05"&gt;5&lt;/option&gt;
+              &lt;option value="06"&gt;6&lt;/option&gt;
+              &lt;option value="07"&gt;7&lt;/option&gt;
+              &lt;option value="08"&gt;8&lt;/option&gt;
+              &lt;option value="09"&gt;9&lt;/option&gt;
+              &lt;option value="10"&gt;10&lt;/option&gt;
+              &lt;option value="11"&gt;11&lt;/option&gt;
+              &lt;option value="12"&gt;12&lt;/option&gt;
+              &lt;option value="13"&gt;13&lt;/option&gt;
+              &lt;option value="14"&gt;14&lt;/option&gt;
+              &lt;option value="15"&gt;15&lt;/option&gt;
+              &lt;option value="16"&gt;16&lt;/option&gt;
+              &lt;option value="17"&gt;17&lt;/option&gt;
+              &lt;option value="18"&gt;18&lt;/option&gt;
+              &lt;option value="19"&gt;19&lt;/option&gt;
+              &lt;option value="20"&gt;20&lt;/option&gt;
+              &lt;option value="21"&gt;21&lt;/option&gt;
+              &lt;option value="22"&gt;22&lt;/option&gt;
+              &lt;option value="23"&gt;23&lt;/option&gt;
+              &lt;option value="24"&gt;24&lt;/option&gt;
+              &lt;option value="25"&gt;25&lt;/option&gt;
+              &lt;option value="26"&gt;26&lt;/option&gt;
+              &lt;option value="27"&gt;27&lt;/option&gt;
+              &lt;option value="28"&gt;28&lt;/option&gt;
+              &lt;option value="29"&gt;29&lt;/option&gt;
+              &lt;option value="30"&gt;30&lt;/option&gt;
+              &lt;option value="31"&gt;31&lt;/option&gt;
+            &lt;/select&gt;
+            &lt;select id="outyear" name="outyear"&gt;
+              &lt;option value="2013"&gt;2017&lt;/option&gt;
+              &lt;option value="2014"&gt;2018&lt;/option&gt;
+              &lt;option value="2015"&gt;2019&lt;/option&gt;
+            &lt;/select&gt;
+          &lt;/fieldset&gt;
+        &lt;/fieldset&gt;
+        &lt;fieldset id="submitbutton" onclick="alert('Thanks for your order');"&gt;
+          &lt;input type="submit" value="Submit" /&gt;          
+        &lt;/fieldset&gt;
+     &lt;/form&gt;
+   &lt;/article&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+
+<h2>Project 2-4 page 143</h2>
+
+<pre>
+    <code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;!--
+      JavaScript 6th Edition
+      Chapter 2
+      Hands-on Project 2-4
+
+      Author: David Sairai
+      Date:   16 April 2021 
+
+      Filename: index.htm
+   --&gt;
+   &lt;meta charset="utf-8" /&gt;
+   &lt;meta name="viewport" content="width=device-width,initial-scale=1.0"&gt;
+   &lt;title&gt;Hands-on Project 2-4&lt;/title&gt;
+   &lt;link rel="stylesheet" href="styles.css" /&gt;
+   &lt;script src="modernizr.custom.05819.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+   &lt;header&gt;
+      &lt;h1&gt;
+         Hands-on Project 2-4
+      &lt;/h1&gt;
+   &lt;/header&gt;
+
+   &lt;article&gt;
+      &lt;h2&gt;Lunch selections&lt;/h2&gt;
+      &lt;form&gt;
+         &lt;input type="checkbox" id="item1" value="8" /&gt;
+         &lt;label for="item1"&gt;Fried chicken ($8.00)&lt;/label&gt;
+         &lt;input type="checkbox" id="item2" value="9" /&gt;
+         &lt;label for="item2"&gt;Fried halibut ($9.00)&lt;/label&gt;
+         &lt;input type="checkbox" id="item3" value="8" /&gt;
+         &lt;label for="item3"&gt;Hamburger ($8.00)&lt;/label&gt;
+         &lt;input type="checkbox" id="item4" value="13" /&gt;
+         &lt;label for="item4"&gt;Grilled salmon ($13.00)&lt;/label&gt;
+         &lt;input type="checkbox" id="item5" value="6" /&gt;
+         &lt;label for="item5"&gt;Side salad ($6.00)&lt;/label&gt;
+         &lt;input type="submit" id="submit" value="Submit" /&gt;
+      &lt;/form&gt;
+   &lt;/article&gt;
+   &lt;script&gt;
+      /* function for menu items items*/
+      function calcTotal() { 
+         var itemTotal = 0; 
+         var item1 = document.getElementById("item1");
+         var item2 = document.getElementById("item2"); 
+         var item3 = document.getElementById("item3");
+         var item4 = document.getElementById("item4"); 
+         var item5 = document.getElementById("item5"); 
+         (item1.checked) ? (itemTotal += 8) : (itemTotal += 0); 
+         (item2.checked) ? (itemTotal += 9) : (itemTotal += 0);
+         (item3.checked) ? (itemTotal += 8) : (itemTotal += 0); 
+         (item4.checked) ? (itemTotal += 13) : (itemTotal += 0); 
+         (item5.checked) ? (itemTotal += 6) : (itemTotal += 0); 
+         var salesTaxRate = 0.07; /*calculates sales tax*/
+         var orderTotal = itemTotal + (itemTotal * salesTaxRate); /* calculates total of order*/
+         alert("Your order total is $" + orderTotal); /*alerts on Order total*/
+      }
+      document.getElementById("submit").addEventListener("click", calcTotal, false);
+   &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+
+<h2>Project 3-3 page 208</h2>
+
+<pre>
+    <code>
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+           &lt;!--
+              JavaScript 6th Edition
+              Chapter 3
+              Hands-on Project 3-3
+        
+              Author: David Sairai
+              Date: 21 April 2021   
+        
+              Filename: index.htm
+           --&gt;
+           &lt;meta charset="utf-8" /&gt;
+           &lt;meta name="viewport" content="width=device-width,initial-scale=1.0"&gt;
+           &lt;title&gt;Hands-on Project 3-3&lt;/title&gt;
+           &lt;link rel="stylesheet" href="styles.css" /&gt;
+           &lt;script src="modernizr.custom.05819.js"&gt;&lt;/script&gt;
+        &lt;/head&gt;
+        
+        &lt;body&gt;
+           &lt;header&gt;
+              &lt;h1&gt;
+                 Hands-on Project 3-3
+              &lt;/h1&gt;
+           &lt;/header&gt;
+        
+           &lt;article&gt;
+              &lt;h2&gt;Scouting Locations&lt;/h2&gt;
+              &lt;div id="results"&gt;
+                  &lt;ul&gt;
+                     &lt;li id="item1"&gt;&lt;/li&gt;
+                     &lt;li id="item2"&gt;&lt;/li&gt;
+                     &lt;li id="item3"&gt;&lt;/li&gt;
+                     &lt;li id="item4"&gt;&lt;/li&gt;
+                     &lt;li id="item5"&gt;&lt;/li&gt;
+                  &lt;/ul&gt;
+              &lt;/div&gt;
+           &lt;/article&gt;
+           &lt;script&gt;
+              //array of places
+              var places = ["Harare", "Bulawayo", "Mutare", "Gweru", "Kariba"];
+              //function processPlaces
+              function processPlaces(){
+              for (var i = 0; i &lt; 5; i++){
+                 var listItem = "item" + (i + 1);
+                 document.getElementById(listItem).innerHTML = places[i];
+                    }
+              }
+              if (window.addEventListener){
+                 window.addEventListener("load", processPlaces, false);
+              } else if (window.attachEvent){
+                 window.attachEvent("onload", processPlaces);
+              }
+           &lt;/script&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;</code>
+</pre>
+
+<h2>Project 4-3 page 286</h2>
+
+<pre>
+    <code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+   &lt;!--
+      JavaScript 6th Edition
+      Chapter 4
+      Hands-on Project 4-3
+
+      Author: David Sairai
+      Date: 23 April 2021   
+
+      Filename: index.htm
+   --&gt;
+   &lt;meta charset="utf-8" /&gt;
+   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+   &lt;title&gt;Hands-on Project 4-3&lt;/title&gt;
+   &lt;link rel="stylesheet" href="styles.css" /&gt;
+   &lt;script src="modernizr.custom.05819.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+   &lt;header&gt;
+      &lt;h1&gt;
+         Hands-on Project 4-3
+      &lt;/h1&gt;
+   &lt;/header&gt;
+
+   &lt;article&gt;
+      &lt;div id="results"&gt;
+          &lt;p id="resultsExpl"&gt;&lt;/p&gt;
+          &lt;ul&gt;
+             &lt;li id="item1"&gt;&lt;/li&gt;
+             &lt;li id="item2"&gt;&lt;/li&gt;
+             &lt;li id="item3"&gt;&lt;/li&gt;
+             &lt;li id="item4"&gt;&lt;/li&gt;
+             &lt;li id="item5"&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;form&gt;
+          &lt;fieldset&gt;
+            &lt;label for="placeBox" id="placeLabel"&gt;
+              Type the name of a place, then click Submit:
+            &lt;/label&gt;
+            &lt;input type="text" id="placeBox" /&gt;
+          &lt;/fieldset&gt;
+          &lt;fieldset&gt;
+            &lt;button type="button" id="button"&gt;Submit&lt;/button&gt;
+          &lt;/fieldset&gt;
+      &lt;/form&gt;
+   &lt;/article&gt;
+   &lt;script&gt;
+      var places = []; // new array to store entered places
+      var i = 1; // counter variable to track array indexes
+
+  // function processInput() to add input to array and then generate list after 5th submission
+      function processInput() {
+         places[i] =  document.getElementById("placeBox").value; 
+                      document.getElementById("placeBox").value = "";
+  
+          if (places[i] != "") { 
+          if (i &lt; 5) {
+          i++;
+
+         } else { 
+            document.getElementById("resultsExpl").innerHTML = "You entered the following places:";
+            listItem = "";
+
+            for (j = 1; j &lt; 6; j++) { 
+              listItem = "item" + j;
+              document.getElementById(listItem).innerHTML = places[j];
+            }
+          }
+        } 
+      }
+      var submitButton = document.getElementById("button");
+      //
+      if (submitButton.addEventListener) {
+          submitButton.addEventListener("click", processInput, false); 
+
+      } else if (submitButton.attachEvent) {
+          submitButton.attachEvent("onclick", processInput);
+    }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+
+
+<div class="copyright">
+   <p>Copyright Reserved &copy;:2021 - Assignment 2 Unique number – 694762 </p>
+</div>
+
+</body>
+</html>
