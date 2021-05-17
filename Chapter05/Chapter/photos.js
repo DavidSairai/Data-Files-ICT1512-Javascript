@@ -4,8 +4,8 @@
 
  *    Photo gallery
  *    Variables and functions
- *    Author: 
- *    Date:   
+ *    Author: David Sairai
+ *    Date: 17 May 2021  
 
  *    Filename: photos.js
  */
@@ -44,6 +44,23 @@ function zoomFig() {
    
 }
 
+/*event listenr fo left arrow, right arrow, center figure element*/
+function createEventListeners(){
+   var leftArrow = document.getElementById("leftarrow");
+   if(leftArrow.addEventListener) {
+      leftArrow.addEventListener("click", leftArrow, false);
+      else if(leftArrow.attachEvent){
+         leftArrow.attachEvent("onclick", leftArrow);
+      }
+   var right = document.getElementsById("rightarrow")'
+   if(righarrow.addEventListener){
+      rightArrow.addEventListener("click", rightArrow, false);
+      else if(rightArrow.attachEvent){
+         rightArrow.attachEvent("onclick", rightArrow);
+      }
+   }
+   }
+}
 /* create event listeners and populate image elements */
 function setUpPage() {
    createEventListeners();
