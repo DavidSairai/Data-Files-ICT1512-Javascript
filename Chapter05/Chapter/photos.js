@@ -26,6 +26,18 @@ function populateFigures(){
    }
 }
 
+/* add src values to img elements basewd om order specified in photoOtder array */
+function populateFigures() {
+   var filename;
+   var currentFig;
+   for (var i = 1; i < 4; i++) {
+      filename = "images/IMG_0" + photoOrder[i] + "sm.jpg";
+      currentFig = document.getElementsByTagName("img")[i - 1];
+      currentFig.src = filename;
+   }
+}
+
+
 /* shift all images one figure to the left, and change values in photoOrder array to match  */
 function rightArrow() {
    for (var i = 0; i < 5; i++) {
@@ -48,6 +60,20 @@ function leftArrow() {
       }
       populateFigures();
    }
+}
+
+/* switch to 5-image layout */
+function previewFive(){
+// create figure and img elements for fifth image
+var lastFigure = document.createElement("figure");
+lastFigure.id = "fig5";
+lastFigure.style.zIndex = "5";
+lastFigure.style.position = "absolute";
+lastFigure.style.right = "45px";
+lastFigure.style.top = "67px";
+var lastImage = document.createElement("img");
+lastImage.width = "240";
+lastImage.height = "135";
 }
 
 /* open center figure in separate window */
@@ -76,6 +102,13 @@ function createEventListeners(){
       mainFig.addEventListener("click", zoomFig, false);
    }else if (mainFig.attachEvent){
       mainFig.attachEvent("onclick", zoomFig);
+   }
+   var showAllButton = document.querySelector("#fiveButton p");
+   if (showAllButton.addEventListener){
+      showAllButton.addEventListener("click", previewFive), false;
+      else if (showAllButton.attachEvent){
+         showAllButton.attachEvent("onclick", previewFive);
+      }
    }
 }
 

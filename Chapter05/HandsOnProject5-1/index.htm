@@ -6,8 +6,8 @@
       Chapter 5
       Hands-on Project 5-1
 
-      Author: 
-      Date:   
+      Author: David Sairai
+      Date:   17 MAy 2021
 
       Filename: index.htm
    -->
@@ -25,5 +25,13 @@
    <p></p>
    <p></p>
    <p></p>
+
+   <script>
+      "use script";
+      document.getElementsByTagName("p")[0].innerHTML = "Web broswer name: " + navigator.appName;
+      document.getElementsByTagName("p")[1].innerHTML = "Web broswer version: " + navigator.appVersion;
+      document.getElementsByTagName("p")[2].innerHTML = "Operating platfrom: " + navigator.platform;
+      document.getElementsByTagName("p")[3].innerHTML = "User agent: " + navigator.userAgent;
+   </script>
 </body>
 </html>
