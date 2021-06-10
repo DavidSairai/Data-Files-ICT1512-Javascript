@@ -5,7 +5,7 @@
       Author: David Sairai
       Date:   3 June 2021
 
-      Filename: script.JavaScript
+      Filename: script.js
 */
    "use strict"; 
 

@@ -3,7 +3,7 @@
     Hands-on Project 6-1
 
     Author: David Sairai
-    Date:   19 May 2021
+    Date:   12 May 2021
     Filename: script.js
 */
 

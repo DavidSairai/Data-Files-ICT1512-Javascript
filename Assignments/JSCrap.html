@@ -1,21 +1,21 @@
-&lt; with   &lt;   &gt;   with  &gt;
+&lt;     &gt;
 
 &lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
+&lt;html&gt;
 &lt;head&gt;
    &lt;!--
       JavaScript 6th Edition
-      Chapter 4
-      Hands-on Project 4-3
+      Chapter 8
+      Hands-on Project 8-4
 
       Author: David Sairai
-      Date: 23 April 2021   
+      Date:   3 June 2021
 
       Filename: index.htm
    --&gt;
    &lt;meta charset="utf-8" /&gt;
-   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
-   &lt;title&gt;Hands-on Project 4-3&lt;/title&gt;
+   &lt;meta name="viewport" content="width=device-width,initial-scale=1.0"&gt;
+   &lt;title&gt;Hands-on Project 8-4&lt;/title&gt;
    &lt;link rel="stylesheet" href="styles.css" /&gt;
    &lt;script src="modernizr.custom.05819.js"&gt;&lt;/script&gt;
 &lt;/head&gt;
@@ -23,67 +23,22 @@
 &lt;body&gt;
    &lt;header&gt;
       &lt;h1&gt;
-         Hands-on Project 4-3
+         Hands-on Project 8-4
       &lt;/h1&gt;
    &lt;/header&gt;
 
    &lt;article&gt;
-      &lt;div id="results"&gt;
-          &lt;p id="resultsExpl"&gt;&lt;/p&gt;
-          &lt;ul&gt;
-             &lt;li id="item1"&gt;&lt;/li&gt;
-             &lt;li id="item2"&gt;&lt;/li&gt;
-             &lt;li id="item3"&gt;&lt;/li&gt;
-             &lt;li id="item4"&gt;&lt;/li&gt;
-             &lt;li id="item5"&gt;&lt;/li&gt;
-          &lt;/ul&gt;
-      &lt;/div&gt;
+      &lt;h2&gt;To Do List&lt;/h2&gt;
       &lt;form&gt;
-          &lt;fieldset&gt;
-            &lt;label for="placeBox" id="placeLabel"&gt;
-              Type the name of a place, then click Submit:
-            &lt;/label&gt;
-            &lt;input type="text" id="placeBox" /&gt;
-          &lt;/fieldset&gt;
-          &lt;fieldset&gt;
-            &lt;button type="button" id="button"&gt;Submit&lt;/button&gt;
-          &lt;/fieldset&gt;
+         &lt;fieldset&gt;
+            &lt;input type="text" id="newItem" /&gt;
+            &lt;input type="button" id="button" value="Add Item" /&gt;
+         &lt;/fieldset&gt;
       &lt;/form&gt;
+      &lt;div id="results"&gt;
+         &lt;ol&gt;&lt;/ol&gt;
+      &lt;/div&gt;
    &lt;/article&gt;
-   &lt;script&gt;
-      var places = []; // new array to store entered places
-      var i = 1; // counter variable to track array indexes
-
-  // function processInput() to add input to array and then generate list after 5th submission
-      function processInput() {
-         places[i] =  document.getElementById("placeBox").value; 
-                      document.getElementById("placeBox").value = "";
-  
-          if (places[i] != "") { 
-          if (i &lt; 5) {
-          i++;
-
-         } else { 
-            document.getElementById("resultsExpl").innerHTML = "You entered the following places:";
-            listItem = "";
-
-            for (j = 1; j &lt; 6; j++) { 
-              listItem = "item" + j;
-              document.getElementById(listItem).innerHTML = places[j];
-            }
-          }
-        } 
-      }
-      var submitButton = document.getElementById("button");
-      //
-      if (submitButton.addEventListener) {
-          submitButton.addEventListener("click", processInput, false); 
-
-      } else if (submitButton.attachEvent) {
-          submitButton.attachEvent("onclick", processInput);
-    }
-    &lt;/script&gt;
+   &lt;script src="script.js"&gt;&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-
-
