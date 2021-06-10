@@ -4,7 +4,7 @@
    <!--
       JavaScript 6th Edition
       Chapter 5
-      Hands-on Project 5-2
+      Hands-on Project 5-4
 
       Author: David Sairai
       Date:   17 May 2021
@@ -33,5 +33,23 @@
 
 <body>
    <p>Your address has been updated.</p>
+   <p id="closeB">Close</p>
+   <script>
+      function closeWindow(){
+         window.close();
+      
+         //add event Listener to close button
+      function createEventListener(){
+         var closeButton = document.getElementById("closeB");
+         if
+         (closeButton.addEventListener){
+            closeButton.addEventListener("click", closeWindow, false);
+         }
+         else if
+         (closeButton.attachEvent){
+            closeButton.attachEvent("onclick", closeWindow);
+         }
+      }
+   </script>
 </body>
 </html>
