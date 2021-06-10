@@ -1,0 +1,372 @@
+<!--
+   *  Hands-on done by by David Sairai - Student 34919120 
+   *  Assignment 4 Unique number – 675282
+   • Project 5-2 page 356
+	• Project 6-1 page 437
+	• Project 7-2 page 523
+   • Project 8-4 page 614
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="David Sairai's Blog">
+<title>David's JavaScript Hands-on Projects - 675282</title>
+<!-- Stylesheet to format my blog-->
+<style>
+    h1 { /* formats my chapter headlines */
+        color:blue; 
+        font-family:verdana;
+        text-align: center;
+        }
+    h2{
+        color:blue; /* formats my project  headlines */
+        font-family:verdana;
+        text-align: center;
+        }
+    body {
+        font-family:sans-serif;/* formats the body  */
+        font-size: 20px;
+        background-color: skyblue;
+        }
+    pre code {
+        background-color:beige; /* formats my project code */
+        font-size: 15px;
+  }
+  #comments{
+        font-family: arial; font-style: italic; font-size: 15px;} /* formats my comments */
+.copyright 
+        {
+        font-size: 14px; /* formats my copyright */
+         }
+    </style>
+<meta http-equiv="Content-Type" content="text/html;
+charset=UTF-8">
+</head>
+<body>
+    <h1>ASSIGNMENT UNIQUE NUMBER – 675282</h1>
+<!-- About JavaScript section -->
+<h2>Project 5-2 page 356</h2>
+
+<pre>
+    <code>
+         &lt;script&gt;
+          /* create function processInput*/
+        function processInput() {
+          var propertyWidth = 300;
+          var propertyHeight = 100;
+          var winLeft = ((screen.width - propertyWidth) / 2);
+          var winTop = ((screen.height - propertyHeight) / 2);
+          var winOptions = "width=300,height=100";
+          winOptions += ",left=" + winLeft;
+          winOptions += ",top=" + winTop;
+          window.open("confirm.htm", "confirm", winOptions);
+       }
+            /* create function createEventlistner */
+          function createEventListener() {
+          var submitButton = document.getElementById("submit");
+          if 
+          (submitButton.addEventListener) {
+            submitButton.addEventListener("click", processInput, false);
+          } 
+          else if
+          (submitButton.attachEvent) {
+            submitButton.attachEvent("onclick", processInput)
+          }
+        }
+       if
+          (window.addEventListener) {
+          window.addEventListener("load", createEventListener, false);
+        } 
+        else if
+          (window.attachEvent) {
+          window.attachEvent("onload", createEventListener);
+       }    
+         &lt;/script&gt;
+      &lt;/body&gt;
+      &lt;/html&gt;</code>
+</pre>
+
+<h2>Project 6-1 page 437</h2>
+
+<p> &lt;script&gt; element added before &lt;/body&gt;element tag</p>
+<pre>
+    <code>
+   &lt; script src="script.js"&gt;&lt; /script&gt;</code>
+</pre>
+
+<p>Javascript source code for the index. html file </p>
+
+<pre>
+   <code>
+      /*  JavaScript 6th Edition
+      Chapter 6
+      Hands-on Project 6-1
+  
+      Author: David Sairai
+      Date:   12 May 2021
+      Filename: script.js
+  */
+  
+  "use strict"; 
+    
+      // Create Global variable
+          var formValidity = true;
+  
+      // Create fucntion to validate fields on form
+          function validateRequired() {
+              var inputElements = document.querySelectorAll("#contactinfo input");
+              var errorDiv = document.getElementById("errorText");
+              var elementCount = inputElements.length;var requiredValidity = true;
+              var currentElement;
+          try 
+           {
+          for(var i = 0; i < elementCount; i++) {
+      
+      /* validate all input elements in fieldset */
+      currentElement = inputElements[i];
+          if (currentElement.value === "") {
+              currentElement.style.background = "rgb(255,233,233)";
+              requiredValidity = false;
+          } 
+          else
+           {
+          currentElement.style.background = "white";
+          }
+         }
+          if (requiredValidity === false) {
+              throw "Please complete all fields.";
+          } 
+          errorDiv.style.display = "none";
+          errorDiv.innerHTML = "";
+      } 
+      catch(msg) {
+         errorDiv.style.display = "block";
+         errorDiv.innerHTML = msg;
+         formValidity = false;
+      }
+   }
+  
+      /* create event listeners */
+      function createEventListeners() {
+          var form = document.getElementsByTagName("form")[0];
+         if (form.addEventListener) {
+             form.addEventListener("submit", validateForm, false);
+          } 
+          else if (form.attachEvent) {
+             form.attachEvent("onsubmit", validateForm);
+          }
+      }
+      /* validate form */
+      function validateForm(evt) {
+         if (evt.preventDefault) {
+            evt.preventDefault(); // prevent form from submitting
+          } 
+          else {
+              evt.returnValue = false; // prevent form from submitting in IE8
+          }
+              formValidity = true; // reset value for revalidation
+              validateRequired();
+          if (formValidity === true) {
+             document.getElementsByTagName("form")[0].submit();
+      }
+  
+      /* validate numbers*/
+      function validateForm(evt) {
+          if (evt.preventDefault) {
+             evt.preventDefault(); // prevent form from submitting
+          } else {
+             evt.returnValue = false; // prevent form from submitting in IE8
+             formValidity = true; // reset value for revalidation
+             validateRequired();
+             validateNumbers();
+          if (formValidity === true) {
+             document.getElementsByTagName("form")[0].submit();
+          }
+         }
+      }
+  }
+  
+      /* run setup functions when page finishes loading */
+      if (window.addEventListener) {
+          window.addEventListener("load", createEventListeners, false);
+      } else if (window.attachEvent) {
+         window.attachEvent("onload", createEventListeners);
+      } 
+  
+      /* validate number fields for older browsers */
+      function validateNumbers() {
+         var numberInputs = document.querySelectorAll(
+             "#contactinfo input[type=number]");
+         var elementCount = numberInputs.length;
+         var numErrorDiv = document.getElementById("numErrorText");
+         var numbersValidity = true;
+         var currentElement;
+         try {
+            for (var i = 0; i < elementCount; i++) {
+  
+      // validate all input elements of type "number" in fieldset
+      currentElement = numberInputs[i];
+      if (isNaN(currentElement.value) || (currentElement.value === "")) {
+               currentElement.style.background = "rgb(255,233,233)";
+               numbersValidity = false;
+              } else {
+                 currentElement.style.background = "white";
+              }
+     }
+         if (numbersValidity === false) {
+            throw "Zip and Social Security values must be numbers.";
+         }
+         numErrorDiv.style.display = "none";
+         numErrorDiv.innerHTML = "";
+      }
+      catch(msg) {
+        numErrorDiv.style.display = "block";
+        numErrorDiv.innerHTML = msg;
+        formValidity = false;
+      }
+   }</code>
+</pre>
+
+<h2>Project 7-2 page 523</h2>
+
+<pre>
+    <code>
+   &lt; script&gt;
+   
+      /* Global variables */
+      var selection = document.getElementById("dateSelected");
+      var result = document.getElementById("day");
+      var allDaysOfWeek = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+      var selectedDate;
+      var dayOfWeekNumber;
+      var dayOfWeekName;
+      
+      /* Function to determine and display the day of the week for the date entered */
+      function lookUpDay() {
+         selectedDate = new Date(selection.value);
+         selectedDate.setUTCHours(12);
+         dayOfWeekNumber = selectedDate.getUTCDay();
+         dayOfWeekName = allDaysOfWeek[dayOfWeekNumber];
+         result.innerHTML = dayOfWeekName;
+       }
+      
+      // add event listener to Find day button and clear form
+      function createEventListener() {
+         var submitButton = document.getElementById("determineDay");
+         if (submitButton.addEventListener) {
+            submitButton.addEventListener("click", lookUpDay, false);
+         } else if (submitButton.attachEvent) {
+            submitButton.attachEvent("onclick", lookUpDay);
+       }
+       document.getElementById("dateSelected").value = "";
+
+       // clear last starting value on reload
+       document.getElementById("day").innerHTML = "";
+       // clear previous results on reload
+     }
+     
+     if (window.addEventListener) {
+        window.addEventListener("load", createEventListener, false);
+     } else if (window.attachEvent) {
+         window.attachEvent("onload", createEventListener);
+       }   
+     &lt; /script&gt;</code>
+</pre>
+
+<h2>Project 8-4 page 614</h2>
+
+<p>&lt;script&gt; element added before &lt;/body&gt;element tag</p>
+<pre>
+    <code>
+      &lt;script src="script.js"&gt;&lt;/script&gt;</code>
+</pre>
+
+<p>Javascript source code for index. html file </p>
+<pre>
+   <code>
+      /*    JavaScript 6th Edition
+      Chapter 8
+      Hands-on Project 8-4
+
+      Author: David Sairai
+      Date:   3 June 2021
+
+      Filename: script.js
+*/
+   "use strict"; 
+
+   // Global Variable
+        var list = [];
+   
+    // Function Generate List
+    function generateList() {
+        var listItems = document.getElementsByTagName("li");
+        for (var i = listItems.length - 1; i >= 0; i--) 
+        {
+            document.getElementsByTagName("ol")[0].
+            removeChild(listItems[i]);
+        }
+        for (var i = 0; i < list.length; i++) {
+            var newItem = "<span class='first'>first</span>" + list[i];
+            var newListItem = document.createElement("li");
+            newListItem.innerHTML = newItem;
+            document.getElementsByTagName("ol")[0].appendChild(newListItem);
+            var firstButtons = document.querySelectorAll(".first");
+            var lastFirstButton = firstButtons[firstButtons.length - 1];
+            if (lastFirstButton.addEventListener)
+            {
+                lastFirstButton.addEventListener("click", moveToTop, false);
+            } else if (lastFirstButton.attachEvent) {
+                lastFirstButton.attachEvent("onclick", moveToTop);
+            }
+        }
+    }   
+
+    // Function add Items
+    function addItem() {
+        var newItem = document.getElementById("newItem");
+        list.push(newItem.value);
+        newItem.focus();
+        newItem.value = "";
+        generateList();
+    }
+
+    // Function moveTop
+   function moveToTop(evt) {
+       if (evt === undefined) { // get caller element in IE8
+        evt = window.event;
+   }
+        var callerElement = evt.target || evt.srcElement;
+        var listItems = document.getElementsByTagName("li");
+        var parentItem = callerElement.parentNode;
+        for (var i = 0; i < list.length; i++) {
+            if (parentItem.innerHTML.search(list[i]) !== -1) {
+                var itemToMove = list.splice(i, 1);
+                list.unshift(itemToMove);
+            }
+        }
+        generateList();
+    }
+
+    // Function createEventListener
+    function createEventListener() {
+        var addButton = document.getElementById("button");
+        if (addButton.addEventListener) {addButton.addEventListener("click", addItem, false);
+    } else if (addButton.attachEvent) {
+        addButton.attachEvent("onclick", addItem);
+    }
+   }
+   if (window.addEventListener) {
+       window.addEventListener("load", createEventListener, false);
+  } else if (window.attachEvent) {
+      window.attachEvent("onload", createEventListener);
+    }
+   </code>
+</pre>
+<div class="copyright">
+   <p>Copyright Reserved &copy;:2021 - Assignment 4 Unique number – 675282 </p>
+</div>
+
+</body>
+</html>
