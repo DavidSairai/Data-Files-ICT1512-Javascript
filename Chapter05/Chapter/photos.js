@@ -15,6 +15,16 @@
 /* global variables */
 var photoOrder = [1,2,3,4,5];
 
+/* add src  values to img elements  based on order  specified in photoOrder array */
+function populateFigures (){
+   var filename;
+   var currentFig;
+   for (var i = 1; i < 4; i++);
+   filename = "images/IMG_0" + photoOrder[i] + "sm.jpg";
+   currentFig = document.getElementsByTagName("img")[i - 1];
+   currentFig.src = filename;
+}
+
 /* shift all images one figure to the left, and change values in photoOrder array to match  */
 function rightArrow() {
    for (var i = 0; i < 5; i++) {
@@ -58,8 +68,13 @@ function EventListeners(){
    } else if (rightarrow.attachEvent){
       rightarrow.attachEvent("onclick", rightArrow);
    }
+   var mainFig = document.getElementsByTagName("img")[1];
+   if (mainFig.addEventListener){
+      mainFig.addEventListener("click", zoomFig, false);
+   } else if (mainFig.attachEvent){
+      mainFig.attachEvent("onclick", zoomFig);
+  }
 }
-
 
 /* create event listeners and populate image elements */
 function setUpPage() {
