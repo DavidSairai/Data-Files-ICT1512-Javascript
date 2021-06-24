@@ -51,6 +51,11 @@
         createEventListeners();
         generateHolder();
     }
+    if (window.addEventListener){
+        window.addEventListener("load", setUpPage, false);
+    } else if (window.attachEvent){
+        window.attachEvent("onload", setUpPage);
+    }
     
     // Create function to validate fields on form
         function validateRequired() {
@@ -96,6 +101,7 @@
            form.attachEvent("onsubmit", validateForm);
         }
     }
+
     /* validate form */
     function validateForm(evt) {
        if (evt.preventDefault) {
