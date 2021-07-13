@@ -7,7 +7,7 @@
 
       Filename: script.js
 */
-   "use strict"; 
+   "use strict"; // interpret document contents in JavaScript strict mode
 
    // Global Variable
         var list = [];
